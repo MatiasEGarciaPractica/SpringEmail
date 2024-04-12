@@ -17,7 +17,7 @@ public class EmailC {
     @Autowired
     EmailServiceImpl webService;
 
-    @PostMapping("/basicMail")
+    @PostMapping("/basicEmail")
     private ResponseEntity<String> sendEmail(@RequestBody SendEmailDto dto){
         webService.sendBasicEmail(dto);
         return ResponseEntity.ok("email sent successfully");

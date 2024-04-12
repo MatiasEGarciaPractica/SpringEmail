@@ -51,7 +51,7 @@ public class EmailServiceImpl {
      */
     public void sendEmailWithImg(SendEmailDto sendEmailDto) throws MessagingException {
         MimeMessage message = this.javaMailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
+        MimeMessageHelper helper = new MimeMessageHelper(message,true, "UTF-8");
         helper.setTo(sendEmailDto.target());
         helper.setText("Mira esta imagen");
 
@@ -80,6 +80,7 @@ public class EmailServiceImpl {
            String contentHtml = templateEngine.process("email", //same name that html template
                    context);
 
+           helper.setTo(sendEmailDto.target());
            helper.setText(contentHtml, true); //without true, send plane text
            javaMailSender.send(message);
        }catch(Exception e){

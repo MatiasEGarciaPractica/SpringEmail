@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -15,7 +17,9 @@ import java.util.ResourceBundle;
 @PropertySource("classpath:email.properties")
 public class EmailConfig {
 
+    @Value("${email.username}")
     private String email;
+    @Value("${email.password}")
     private String password;
 
     private Properties getMailProperties(){
@@ -38,6 +42,13 @@ public class EmailConfig {
         mailSender.setUsername(email);
         mailSender.setPassword(password);
         return mailSender;
+    }
+
+    @Bean
+    public SimpleMailMessage templateMessage(){
+        SimpleMailMessage s = new SimpleMailMessage();//I suppose that uses the javaMailSender bean
+        s.setFrom(email);
+        return s;
     }
 
     @Bean

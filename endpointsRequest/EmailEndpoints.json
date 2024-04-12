@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "3200a9a3-f56b-4e9d-9f28-ae82f279015f",
+		"name": "Email",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20707228"
+	},
+	"item": [
+		{
+			"name": "basicMail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"target\" : \"matiasegarcia22@gmail.com\",\r\n    \"issue\" : \"basicEmail\",\r\n    \"message\": \"probando el basicEmail con spring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/basicEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"basicEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendEmailWithImg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"target\" : \"matiasegarcia22@gmail.com\",\r\n    \"issue\" : \"sendEmailWithImg\",\r\n    \"message\": \"probando el sendEmailWithImg con spring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/sendEmailWithImg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sendEmailWithImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendEmailHtml",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"target\" : \"matiasegarcia22@gmail.com\",\r\n    \"issue\" : \"sendEmailHtml\",\r\n    \"message\": \"probando el sendEmailHtml con spring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/sendEmailHtml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sendEmailHtml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
